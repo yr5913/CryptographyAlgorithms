@@ -8,8 +8,8 @@ public class MultiplyAndSquareAlgo {
         System.out.println(findMod(3, 197, 101, true));
     }
 
-    public static int findMod(int x, int e, int n, boolean print) {
-        String binary = Integer.toBinaryString(e);
+    public static long findMod(long x, long e, long n, boolean print) {
+        String binary = Long.toBinaryString(e);
         if (print)
             System.out.printf("Binary representation of %d is %s\n", e, binary);
 
@@ -27,13 +27,13 @@ public class MultiplyAndSquareAlgo {
         StringBuilder yxStringBuilder = new StringBuilder();
         yxStringBuilder.append(Helpers.leftPad("y.x", ' ', padLen));
         yxStringBuilder.append(" |");
-        int y = x;
+        long y = x;
         for (int i = 1; i < binaryChars.length; i++) {
             iStringBuilder.append(Helpers.leftPad(binaryChars.length - i - 1, ' ', padLen));
             iStringBuilder.append(" |");
             hStringBuilder.append(Helpers.leftPad(binaryChars[i] - '0', ' ', padLen));
             hStringBuilder.append(" |");
-            int result = (y * y) % n;
+            long result = (y * y) % n;
             y2StringBuilder.append(Helpers.leftPad(String.format("%d ^ 2 mod %d = %d", y, n, result), ' ', padLen));
             y2StringBuilder.append(" |");
             y = result;

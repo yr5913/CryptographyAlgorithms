@@ -1,6 +1,9 @@
 package rsa;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Modulo {
 
@@ -69,21 +72,6 @@ public class Modulo {
         return (x - 1) * (y - 1);
     }
 
-    public static void main(String[] args) {
-        GCD gcd = applyEucledian(12, 67, true);
-        System.out.println(getInverseUsingExtendedEuclidean(168, 1239, true));
-        System.out.println(gcd.gcd + " " + Arrays.toString(gcd.quotients));
-        System.out.println(-5 % 10);
-        int z = 7;
-        int i = 3;
-        while (true) {
-            if (MultiplyAndSquareAlgo.findMod(7, i, 99, false) == 10) {
-                System.out.println(i);
-                break;
-            }
-            i++;
-        }
-    }
 
     public static Map<Long, Integer> factorize(long n) {
         Map<Long, Integer> factors = new HashMap<>();
@@ -98,6 +86,51 @@ public class Modulo {
             }
         }
         return factors;
+    }
+
+    public static long logarithmicModulo(long rem, long base, long n, boolean print) {
+        long value = 1;
+        int i = 0;
+        System.out.printf("%d ^ %d = %d mod %d = %d\n", base, i, value, n, value);
+        while (true) {
+            long newValue = (value * base) % n;
+            i++;
+            System.out.printf("%d ^ %d = %d.%d mod %d = %d\n", base, i, value, base, n, newValue);
+            value = newValue;
+            if (value == 1) {
+                return -1;
+            } else if (value == rem) {
+                System.out.printf("The power is: %d\n", i);
+                return i;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+//        GCD gcd = applyEucledian(12, 67, true);
+//        System.out.println(getInverseUsingExtendedEuclidean(168, 1239, true));
+//        System.out.println(gcd.gcd + " " + Arrays.toString(gcd.quotients));
+//        System.out.println(-5 % 10);
+//        int z = 7;
+//        int i = 3;
+//        while (true) {
+//            if (MultiplyAndSquareAlgo.findMod(7, i, 99, false) == 10) {
+//                System.out.println(i);
+//                break;
+//            }
+//            i++;
+//        }
+        logarithmicModulo(2, 3, 11, true);
+        System.out.println("-----------Next-----------------");
+        logarithmicModulo(3, 2, 19, true);
+        System.out.println("-----------Next-----------------");
+        logarithmicModulo(3, 3, 97, true);
+        System.out.println("-----------Next-----------------");
+        logarithmicModulo(3, 4, 97, true);
+        System.out.println("-----------Next-----------------");
+        logarithmicModulo(4, 3, 97, true);
+        System.out.println("-----------Next-----------------");
+        logarithmicModulo(43, 3, 97, true);
     }
 }
 

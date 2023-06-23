@@ -76,8 +76,8 @@ public class EclipticCurve {
         if (p1.equals(p2)) {
             if (print) {
                 System.out.println("P1 is equal to P2");
-                System.out.println("Apply formula S = 3 * x1 ^2 + a / 2y1  mod p");
-                System.out.printf("S = 3 * %d ^2 + a / 2 * %d  mod %d\n", p1.x, p1.y, p);
+                System.out.println("Apply formula S = (3 * x1 ^ 2 + a) / 2y1  mod p");
+                System.out.printf("S = (3 * %d ^ 2 + a)/ 2 * %d  mod %d\n", p1.x, p1.y, p);
             }
             s = ((3 * p1.x * p1.x) + a) % p *
                     (Modulo.getInverseUsingExtendedEuclidean((2 * p1.y) % p, p, false) % p);
@@ -87,8 +87,8 @@ public class EclipticCurve {
             }
             if (print) {
                 System.out.println("P1 is not equal to P2");
-                System.out.println("Apply formula S = y2 - y1 / x2- x1 mod p");
-                System.out.printf("S = %d - %d / %d- %d mod %d\n", p2.y, p1.y, p2.x, p1.x, p);
+                System.out.println("Apply formula S = (y2 - y1) / (x2- x1) mod p");
+                System.out.printf("S = (%d - %d) / (%d- %d) mod %d\n", p2.y, p1.y, p2.x, p1.x, p);
             }
             s = (Modulo.extractPositiveMod(p2.y - p1.y, p) *
                     (Modulo.getInverseUsingExtendedEuclidean(Modulo.extractPositiveMod(p2.x - p1.x, p), p, false) % p));
@@ -98,21 +98,21 @@ public class EclipticCurve {
         if (print) {
             System.out.printf("S = %d\n", s);
             System.out.println("x3 = S ^ 2 - x1 - x2  mod p ");
-            System.out.printf("x3 = %d ^ 2 - %d - %d  mod p\n", s, p1.x, p2.x);
+            System.out.printf("x3 = %d ^ 2 - %d - %d  mod %d\n", s, p1.x, p2.x, p);
         }
         int x3 = (int) Modulo.extractPositiveMod(s * s - p1.x - p2.x, p);
         if (print) {
             System.out.println("x3 = " + x3);
             System.out.println("y3 = S(x1 - x3) - y1  mod p");
-            System.out.printf("y3 = %d(%d - %d) - %d  mod p\n", s, p1.x, x3, p1.y);
+            System.out.printf("y3 = %d(%d - %d) - %d  mod %d\n", s, p1.x, x3, p1.y, p);
         }
         int y3 = (int) Modulo.extractPositiveMod(s * (p1.x - x3) - p1.y, p);
 
         Point point = new Point(x3, y3);
         if (print) {
 
+            System.out.println("y3 = " + y3);
             System.out.println(point);
-            System.out.println("x3 = " + y3);
         }
 
         return point;

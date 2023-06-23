@@ -25,10 +25,10 @@ public class DoubleAndAddAlgorithm {
             stringBuilder.append(formula);
             stringBuilder.append(" = 2 . ");
             stringBuilder.append(result);
-            result = EclipticCurve.addPoints(result, result, n, a, false);
+            result = EclipticCurve.addPoints(result, result, n, a, true);
             if (chars[i] == '1') {
                 stringBuilder.append(" + ").append(p);
-                result = EclipticCurve.addPoints(p, result, n, a, false);
+                result = EclipticCurve.addPoints(p, result, n, a, true);
             }
 
             stringBuilder.append(" = ").append(result);

@@ -4,7 +4,7 @@ import utils.Helpers;
 
 public class BreakRSA {
 
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
         long n = 179176752980291197L;
         long[] primeFactors = useSquareRootTechnique(n);
         long p = primeFactors[0];
@@ -25,6 +25,17 @@ public class BreakRSA {
         String actualText = Helpers.asciiToText(textInBinary, 7);
         System.out.println("Decrypted text is: " + actualText);
         //long phiOfN = Modulo.phiOfNWithTwoPrimeFactors();
+    }
+
+    public static void main(String[] args) {
+        long publicKey = 53;
+        RSAImplement rsaImplement = new RSAImplement(79, 101);
+        long cipher = Long.parseLong("11100001001011111010111000110100111010011101100110001001", 2);
+        System.out.println("Cipher in decimal, " + cipher);
+        System.out.println("Value of n is " + rsaImplement.getN());
+        System.out.println("Value of phiOfN is " + rsaImplement.getPhiOfN());
+        long privateKey = rsaImplement.getPrivateKey(publicKey);
+        System.out.println("Private key is " + privateKey);
     }
 
     public static long[] useSquareRootTechnique(long n) {

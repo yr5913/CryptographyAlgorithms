@@ -5,7 +5,7 @@ import utils.Helpers;
 public class MultiplyAndSquareAlgo {
 
     public static void main(String[] args) {
-        System.out.println(findMod(3, 197, 101, true));
+        System.out.println(findMod(55, 55, 101, true));
     }
 
     public static long findMod(long x, long e, long n, boolean print) {
@@ -28,6 +28,7 @@ public class MultiplyAndSquareAlgo {
         yxStringBuilder.append(Helpers.leftPad("y.x", ' ', padLen));
         yxStringBuilder.append(" |");
         long y = x;
+        int count = 0;
         for (int i = 1; i < binaryChars.length; i++) {
             iStringBuilder.append(Helpers.leftPad(binaryChars.length - i - 1, ' ', padLen));
             iStringBuilder.append(" |");
@@ -37,11 +38,14 @@ public class MultiplyAndSquareAlgo {
             y2StringBuilder.append(Helpers.leftPad(String.format("%d ^ 2 mod %d = %d", y, n, result), ' ', padLen));
             y2StringBuilder.append(" |");
             y = result;
+
+            count++;
             if (binaryChars[i] == '1') {
                 result = (y * x) % n;
                 yxStringBuilder.append(Helpers.leftPad(String.format("%d * %d mod %d = %d", y, x, n, result), ' ', padLen));
                 yxStringBuilder.append(" |");
                 y = result;
+                count++;
             } else {
                 yxStringBuilder.append(Helpers.leftPad("NA", ' ', padLen));
                 yxStringBuilder.append(" |");
@@ -53,6 +57,7 @@ public class MultiplyAndSquareAlgo {
             System.out.println(hStringBuilder);
             System.out.println(y2StringBuilder);
             System.out.println(yxStringBuilder);
+            System.out.println("Total multiplications performed are: " + count);
         }
 
         return y;

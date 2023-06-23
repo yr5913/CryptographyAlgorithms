@@ -53,4 +53,8 @@ public class RSAImplement {
     public void setN(long n) {
         this.n = n;
     }
+
+    public static void main(String[] args) {
+
+    }
 }

@@ -131,6 +131,8 @@ public class Modulo {
         logarithmicModulo(4, 3, 97, true);
         System.out.println("-----------Next-----------------");
         logarithmicModulo(43, 3, 97, true);
+        System.out.println("-------------");
+        System.out.println(getInverseUsingExtendedEuclidean(5, 119, true));
     }
 }
 

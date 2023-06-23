@@ -5,7 +5,7 @@ public class DHKE {
     public static DHKEKeys generatePublicAndCommonKey(long p, long alpha, long xA, long xB, boolean print) {
         if (print) {
             System.out.printf("Xa: %d\n", xA);
-            System.out.printf("XB: %d\n", xB);
+            System.out.printf("Xb: %d\n", xB);
             System.out.println("Ya = α ^ Xa mod p");
         }
         long yA = helper(xA, alpha, p, print);
@@ -25,7 +25,7 @@ public class DHKE {
 
         long value = MultiplyAndSquareAlgo.findMod(alpha, a, p, false);
         if (print) {
-            System.out.printf("\t= %d ^ %d mod %d = %d\n", alpha, a, p, value);
+            System.out.printf("   = %d ^ %d mod %d = %d\n", alpha, a, p, value);
         }
         return value;
     }

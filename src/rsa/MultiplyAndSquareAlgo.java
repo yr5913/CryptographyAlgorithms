@@ -5,7 +5,7 @@ import utils.Helpers;
 public class MultiplyAndSquareAlgo {
 
     public static void main(String[] args) {
-        System.out.println(findMod(55, 55, 101, true));
+        System.out.println(findMod(4, 269, 377, true));
     }
 
     public static long findMod(long x, long e, long n, boolean print) {

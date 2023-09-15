@@ -11,6 +11,6 @@ public class DHKEEcliptic {
     }
 
     public static void main(String[] args) {
-        System.out.println(singleKey(new Point(5, 9), 6, 1, 11));
+        System.out.println(singleKey(new Point(10, 11), 12, 2, 17));
     }
 }

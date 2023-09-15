@@ -15,7 +15,7 @@ public class RSAImplement {
 
 
     public long getPrivateKey(long publicKey) {
-        return Modulo.getInverseUsingExtendedEuclidean(publicKey, phiOfN, false);
+        return Modulo.getInverseUsingExtendedEuclidean(publicKey, phiOfN, true);
     }
 
     public long encryptOrDecrypt(long key, long text) {
@@ -55,6 +55,8 @@ public class RSAImplement {
     }
 
     public static void main(String[] args) {
-
+        RSAImplement rsaImplement = new RSAImplement(13, 29);
+        System.out.println();
+        System.out.println(rsaImplement.getPrivateKey(5));
     }
 }

@@ -35,7 +35,7 @@ public class DHKE {
         System.out.println("-----------Next-----------------");
         generatePublicAndCommonKey(467, 2, 400, 134, true);
         System.out.println("-----------Next-----------------");
-        generatePublicAndCommonKey(467, 2, 228, 57, true);
+        generatePublicAndCommonKey(323, 2, 125, 3, true);
 
     }
 }

@@ -30,6 +30,7 @@ public class ShiftCipher {
     public static void main(String[] args) {
 
         // CRYPTO
-        System.out.println(Arrays.toString(decryptWithoutKey("MBIZDY")));
+        System.out.println(Arrays.toString(decryptWithoutKey("svunhnvpuhaptlmvynvaaluhwylalyuhabyhslcluaaoyldaolzlhzvuzvb\n" +
+                "avmihshujlpuhshukdolylzbttlyzjhushzakljhklzhukdpualyzhspmlaptlayvbislpziyldpun")));
     }
 }

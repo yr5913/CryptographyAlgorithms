@@ -120,19 +120,19 @@ public class Modulo {
 //            }
 //            i++;
 //        }
-        logarithmicModulo(2, 3, 11, true);
-        System.out.println("-----------Next-----------------");
-        logarithmicModulo(3, 2, 19, true);
-        System.out.println("-----------Next-----------------");
-        logarithmicModulo(3, 3, 97, true);
-        System.out.println("-----------Next-----------------");
-        logarithmicModulo(3, 4, 97, true);
-        System.out.println("-----------Next-----------------");
+//        logarithmicModulo(2, 3, 11, true);
+//        System.out.println("-----------Next-----------------");
+//        logarithmicModulo(3, 2, 19, true);
+//        System.out.println("-----------Next-----------------");
+//        logarithmicModulo(3, 3, 97, true);
+//        System.out.println("-----------Next-----------------");
+//        logarithmicModulo(3, 4, 97, true);
+//        System.out.println("-----------Next-----------------");
+//        logarithmicModulo(4, 3, 97, true);
+//        System.out.println("-----------Next-----------------");
         logarithmicModulo(4, 3, 97, true);
-        System.out.println("-----------Next-----------------");
-        logarithmicModulo(43, 3, 97, true);
         System.out.println("-------------");
-        System.out.println(getInverseUsingExtendedEuclidean(5, 119, true));
+        System.out.println(getInverseUsingExtendedEuclidean(17, 43, true));
     }
 }
 

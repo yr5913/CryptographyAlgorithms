@@ -22,7 +22,7 @@ public class EclipticCurve {
             int y2 = (i * i) % n;
             System.out.printf("%d     |   %d\n", i, y2);
             yLists.get(y2).add(i);
-            int z = (((y2 * i) % n) + ((3 * i) % n) + 2) % n;
+            int z = (((y2 * i) % n) + ((a * i) % n) + b) % n;
             xList[i] = z;
             stringBuilder.append(String.format("%d     |   %d\n", i, z));
         }
@@ -44,9 +44,10 @@ public class EclipticCurve {
         return points;
     }
 
+    // y = x ^ 3 + ax + b
     public static void main(String[] args) {
-        calculatePoints(3, 2, 7);
-        genPoints(new Point(0, 3), 7, 3, true);
+        calculatePoints(1, 0, 7);
+        //genPoints(new Point(0, 3), 7, 3, true);
     }
 
     public static void genPoints(Point p1, long p, long a, boolean print) {

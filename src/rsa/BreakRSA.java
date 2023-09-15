@@ -28,8 +28,8 @@ public class BreakRSA {
     }
 
     public static void main(String[] args) {
-        long publicKey = 53;
-        RSAImplement rsaImplement = new RSAImplement(79, 101);
+        long publicKey = 5;
+        RSAImplement rsaImplement = new RSAImplement(13, 29);
         long cipher = Long.parseLong("11100001001011111010111000110100111010011101100110001001", 2);
         System.out.println("Cipher in decimal, " + cipher);
         System.out.println("Value of n is " + rsaImplement.getN());

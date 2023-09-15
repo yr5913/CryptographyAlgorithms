@@ -45,6 +45,6 @@ public class DoubleAndAddAlgorithm {
     }
 
     public static void main(String[] args) {
-        applyDoubleAndAddAlgorithm(9, new Point(8, 10), 29, 4);
+        applyDoubleAndAddAlgorithm(3, new Point(4, 8), 11, 4);
     }
 }
